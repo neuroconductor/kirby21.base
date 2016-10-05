@@ -4,24 +4,15 @@
 \alias{get_image_filenames}
 \title{Get Image Filenames}
 \usage{
-get_image_filenames(ids = get_ids(), modalities = all_modalities(),
-  visits = c(1, 2))
+get_image_filenames(...)
 }
 \arguments{
-\item{ids}{ID to return}
-
-\item{modalities}{vector of image modalities within
-\code{c("FLAIR", "MPRAGE", "T2w", "fMRI", "DTI")} to return}
-
-\item{visits}{Vector of scan indices to return (1 or 2 or both)}
-}
-\value{
-Data.frame of filenames
+\item{...}{arguments passed to \code{\link{get_image_filenames_df}}}
 }
 \description{
 Return the filenames for the images
 }
 \examples{
-get_image_filenames()
+get_image_filenames() 
 }
 

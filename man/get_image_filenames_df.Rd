@@ -6,11 +6,12 @@
 \alias{get_image_filenames_list_by_subject}
 \alias{get_image_filenames_list_by_visit}
 \alias{get_image_filenames_matrix}
-\title{Get Image Filenames in a matrix}
+\title{Get Image Filenames in a data.frame}
 \usage{
-get_image_filenames_df(..., long = FALSE)
+get_image_filenames_df(ids = get_ids(), modalities = all_modalities(),
+  visits = c(1, 2), long = TRUE)
 
-get_image_filenames_matrix(..., long = FALSE)
+get_image_filenames_matrix(...)
 
 get_image_filenames_list(...)
 
@@ -19,11 +20,28 @@ get_image_filenames_list_by_visit(...)
 get_image_filenames_list_by_subject(...)
 }
 \arguments{
-\item{...}{arguments passed to \code{\link{get_image_filenames}}}
+\item{ids}{ID to return}
+
+\item{modalities}{vector of image modalities within
+\code{c("FLAIR", "MPRAGE", "T2w", "fMRI", "DTI")} to return}
+
+\item{visits}{Vector of scan indices to return (1 or 2 or both)}
 
 \item{long}{if \code{TRUE}, each row is a subject, visit, modality pair}
+
+\item{...}{arguments passed to \code{\link{get_image_filenames_df}}}
+}
+\value{
+Data.frame of filenames
 }
 \description{
-Return the filenames for the images
+Return a data.frame of filenames for the images
+}
+\examples{
+get_image_filenames_df()
+get_image_filenames_matrix()  
+get_image_filenames_list()   
+get_image_filenames_list_by_visit()    
+get_image_filenames_list_by_subject()     
 }
 

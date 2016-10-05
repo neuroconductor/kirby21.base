@@ -26,5 +26,6 @@ modality_df = function(){
   mods = matrix(mods, byrow = TRUE, ncol = 2)
   mods = data.frame(mods, stringsAsFactors = FALSE)
   colnames(mods) = c("modality", "package")
+  rownames(mods) = mods$modality
   return(mods)
 }
