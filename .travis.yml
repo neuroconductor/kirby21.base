@@ -1,5 +1,8 @@
-# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-
 language: R
-sudo: false
+sudo: no
 cache: packages
+use_bioc: yes
+bioc_required: yes
+warnings_are_errors: yes
+r_check_args: --as-cran
+
