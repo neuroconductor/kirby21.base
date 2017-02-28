@@ -10,6 +10,7 @@
 #'
 #' @return A logical indicating the data is there.
 #' @export
+#' @importFrom git2r clone
 download_kirby21_data =  function(
   modality = kirby21.base::all_modalities(),
   progress = TRUE){
