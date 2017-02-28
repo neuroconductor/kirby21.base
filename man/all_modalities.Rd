@@ -13,4 +13,3 @@ Vector of characters
 Return the modalities for images where
 packages were developed
 }
-

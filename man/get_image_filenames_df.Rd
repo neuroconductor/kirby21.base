@@ -2,10 +2,10 @@
 % Please edit documentation in R/get_image_filenames.R
 \name{get_image_filenames_df}
 \alias{get_image_filenames_df}
-\alias{get_image_filenames_list}
-\alias{get_image_filenames_list_by_subject}
-\alias{get_image_filenames_list_by_visit}
 \alias{get_image_filenames_matrix}
+\alias{get_image_filenames_list}
+\alias{get_image_filenames_list_by_visit}
+\alias{get_image_filenames_list_by_subject}
 \title{Get Image Filenames in a data.frame}
 \usage{
 get_image_filenames_df(ids = get_ids(), modalities = all_modalities(),
@@ -44,4 +44,3 @@ get_image_filenames_list()
 get_image_filenames_list_by_visit()    
 get_image_filenames_list_by_subject()     
 }
-

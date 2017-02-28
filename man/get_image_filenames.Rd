@@ -15,4 +15,3 @@ Return the filenames for the images
 \examples{
 get_image_filenames() 
 }
-

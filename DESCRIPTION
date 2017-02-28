@@ -1,17 +1,18 @@
 Package: kirby21.base
 Type: Package
-Title: Example Structural Data from the Multi-Modal MRI Reproducibility Resource
-Version: 1.4.2
-Date: 2016-09-15
+Title: Example Data from the Multi-Modal MRI Reproducibility Resource
+Version: 1.5
+Date: 2017-02-27
 Author: John Muschelli <muschellij2@gmail.com>
 Maintainer: John Muschelli <muschellij2@gmail.com>
-Description: Structural multi-modal magnetic resonance imaging ('MRI')
-    data from the 'Kirby21' reproducibility study.
+Description: Multi-modal magnetic resonance imaging ('MRI')
+    data from the 'Kirby21' reproducibility study, including functional
+    and structural imaging.
 License: GPL-2 
 LazyData: true
 LazyLoad: true
 Imports:
     utils,
     stats
-RoxygenNote: 5.0.1.9000
+RoxygenNote: 6.0.1
 URL: https://www.nitrc.org/projects/multimodal/

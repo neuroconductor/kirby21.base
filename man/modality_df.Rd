@@ -17,4 +17,3 @@ modality_df()
 Return the modalities for images and the
 packages that contain them
 }
-

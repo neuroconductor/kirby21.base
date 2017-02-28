@@ -24,4 +24,3 @@ Return the filenames for the par files
 \examples{
 get_par_filenames()
 }
-

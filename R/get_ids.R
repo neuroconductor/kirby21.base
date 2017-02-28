@@ -1,7 +1,7 @@
 #' @title Get IDs with Data in Package
 #'
 #' @description Return the IDs for the people scanned available in the 
-#' kirby21 pacakges
+#' kirby21 packages
 #' @return Vector of numeric ids
 #' 
 #' @export

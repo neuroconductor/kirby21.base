@@ -17,4 +17,3 @@ Logical if files are copied
 \description{
 Copies files from Kirby21 Package to an output directory
 }
-

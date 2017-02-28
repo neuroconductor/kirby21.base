@@ -11,6 +11,5 @@ Vector of numeric ids
 }
 \description{
 Return the IDs for the people scanned available in the 
-kirby21 pacakges
+kirby21 packages
 }
-
