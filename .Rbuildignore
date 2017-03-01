@@ -3,3 +3,4 @@
 data/^[.].*
 ^Kirby21_data.R
 ^\.travis\.yml$
+^appveyor\.yml$
