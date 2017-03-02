@@ -57,6 +57,9 @@ download_kirby21_data =  function(
       pkg_dir = system.file(package = pkg)
       infiles = file.path(datadir, files)
       outfiles = file.path(pkg_dir, files)
+      dn = dirname(outfiles)
+      sapply(dn, dir.create, showWarnings = FALSE,
+             recursive = TRUE)
       file.copy(infiles, outfiles, overwrite = TRUE)
     } else {
       stop("There are no files in this repo - please email maintainer")
