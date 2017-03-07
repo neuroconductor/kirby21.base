@@ -71,7 +71,7 @@ get_image_filenames_df = function(
     if (warn) {
       warning(paste0("Packages ", not_installed, 
                    " are not installed, modalities from ", 
-                   "these packages will be missing"))
+                   "these packages may be missing"))
     }
   }
   df$filename = mapply(function(fname, pkg){
