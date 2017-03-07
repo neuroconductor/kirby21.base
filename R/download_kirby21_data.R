@@ -7,17 +7,21 @@
 #' must have the package downloaded for that modality.
 #' @param progress Should verbose messages be printed when downloading 
 #' the data
+#' @param force If the package of that data
 #'
 #' @return A logical indicating the data is there.
 #' @export
 #' @importFrom git2r clone
 download_kirby21_data =  function(
   modality = kirby21.base::all_modalities(),
-  progress = TRUE){
+  progress = TRUE,
+  force = FALSE){
   
   modality = match.arg(modality)
-  fnames = get_image_filenames(modalities = modality,
-                               ids = get_ids())
+  fnames = get_image_filenames(
+    modalities = modality,
+    ids = get_ids(),
+    warn = !force)
   
   mod_df = kirby21.base::modality_df()
   pkg = mod_df[ mod_df$modality %in% modality, "package"]  
@@ -28,9 +32,33 @@ download_kirby21_data =  function(
   ##########################################
   
   not_installed = !(pkg %in% packs)
-  if (not_installed) {
-    stop(paste0(pkg, " Package not installed, must install package", 
-                " first to download the data"))
+  no_pack = pkg[not_installed]
+  if (any(not_installed)) {
+    if (!force) {
+      pkg = paste(pkg, collapse = ", ")
+      stop(paste0(pkg, 
+                  " Package not installed, must install package", 
+                  " first to download the data"))
+    } else {
+      #########################
+      # Hack for CRAN
+      # Will still download data, but not really 
+      # install the package
+      #########################      
+      pack_dirs = file.path(.Library, no_pack)
+      dir.create(pack_dirs, showWarnings = FALSE)
+      sapply(no_pack, function(p){
+        pp = c(
+          paste0("Package: ", p),
+          "Version: 0.0")
+        desc_file = file.path(.Library, p, "DESCRIPTION")
+        writeLines(text = pp, con = desc_file)
+      })
+      # desc_files = file.path(pack_dirs, "DESCRIPTION")
+      # on.exit({
+      #   file.remove(desc_files)
+      # })
+    }
   }
   if (is.null(fnames)) {
     fnames = ""
@@ -67,7 +95,8 @@ download_kirby21_data =  function(
   }
   good = tryCatch({
     fnames = get_image_filenames(modalities = modality,
-                                 ids = get_ids())
+                                 ids = get_ids(),
+                                 warn = !force)
     TRUE
   }, warning = function(w) FALSE)
   return(good)

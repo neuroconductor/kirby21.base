@@ -5,7 +5,7 @@
 \title{Download Kirby21 Imaging Data}
 \usage{
 download_kirby21_data(modality = kirby21.base::all_modalities(),
-  progress = TRUE)
+  progress = TRUE, force = FALSE)
 }
 \arguments{
 \item{modality}{modality of images that are to be downloaded.  You
@@ -13,6 +13,8 @@ must have the package downloaded for that modality.}
 
 \item{progress}{Should verbose messages be printed when downloading 
 the data}
+
+\item{force}{If the package of that data}
 }
 \value{
 A logical indicating the data is there.

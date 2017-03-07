@@ -6,6 +6,8 @@
 #' \code{c("FLAIR", "MPRAGE", "T2w", "fMRI", "DTI")} to return
 #' @param visits Vector of scan indices to return (1 or 2 or both)
 #' @param long if \code{TRUE}, each row is a subject, visit, modality pair
+#' @param warn if \code{TRUE}, warnings will be produced when packages
+#' are not installed
 #' 
 #' @return Data.frame of filenames
 #' 
@@ -19,7 +21,8 @@ get_image_filenames_df = function(
   ids = get_ids(), 
   modalities = all_modalities(), 
   visits = c(1,2),
-  long = TRUE){
+  long = TRUE,
+  warn = TRUE){
   
   
   ##########################################
@@ -65,9 +68,11 @@ get_image_filenames_df = function(
   not_installed = setdiff(df$package, packs)
   if (length(not_installed) > 0) {
     not_installed = paste(not_installed, collapse = " ")
-    warning(paste0("Packages ", not_installed, 
+    if (warn) {
+      warning(paste0("Packages ", not_installed, 
                    " are not installed, modalities from ", 
                    "these packages will be missing"))
+    }
   }
   df$filename = mapply(function(fname, pkg){
     system.file( fname, package = pkg)

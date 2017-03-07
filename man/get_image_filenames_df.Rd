@@ -9,7 +9,7 @@
 \title{Get Image Filenames in a data.frame}
 \usage{
 get_image_filenames_df(ids = get_ids(), modalities = all_modalities(),
-  visits = c(1, 2), long = TRUE)
+  visits = c(1, 2), long = TRUE, warn = TRUE)
 
 get_image_filenames_matrix(...)
 
@@ -28,6 +28,9 @@ get_image_filenames_list_by_subject(...)
 \item{visits}{Vector of scan indices to return (1 or 2 or both)}
 
 \item{long}{if \code{TRUE}, each row is a subject, visit, modality pair}
+
+\item{warn}{if \code{TRUE}, warnings will be produced when packages
+are not installed}
 
 \item{...}{arguments passed to \code{\link{get_image_filenames_df}}}
 }
