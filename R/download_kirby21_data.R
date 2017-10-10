@@ -7,7 +7,9 @@
 #' must have the package downloaded for that modality.
 #' @param progress Should verbose messages be printed when downloading 
 #' the data
-#' @param force If the package of that data
+#' @param force If the package of that modality is not installed stop.  If
+#' \code{force = FALSE}, then this will download the data but not
+#' really install the package.
 #'
 #' @return A logical indicating the data is there.
 #' @export

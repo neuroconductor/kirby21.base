@@ -14,7 +14,9 @@ must have the package downloaded for that modality.}
 \item{progress}{Should verbose messages be printed when downloading 
 the data}
 
-\item{force}{If the package of that data}
+\item{force}{If the package of that modality is not installed stop.  If
+\code{force = FALSE}, then this will download the data but not
+really install the package.}
 }
 \value{
 A logical indicating the data is there.

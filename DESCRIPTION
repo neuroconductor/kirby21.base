@@ -16,6 +16,6 @@ Imports:
     utils,
     stats,
     git2r
-RoxygenNote: 6.0.1
+RoxygenNote: 6.0.1.9000
 URL: https://www.nitrc.org/projects/multimodal/,
     http://dx.doi.org/10.1016/j.neuroimage.2010.11.047
