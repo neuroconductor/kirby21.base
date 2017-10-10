@@ -9,5 +9,5 @@
 }
 \description{
 A dataset containing the mapping from the Subject IDs from the 
-Kirby demographics to the KKI2009 idenifiers on NITRC
+Kirby demographics to the KKI2009 identifiers on NITRC
 }
