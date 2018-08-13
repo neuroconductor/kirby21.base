@@ -2,6 +2,7 @@
 
 export(all_modalities)
 export(copy_kirby21_data)
+export(delete_kirby21_data)
 export(download_kirby21_data)
 export(get_ids)
 export(get_image_filenames)

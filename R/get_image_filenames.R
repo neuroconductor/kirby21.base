@@ -8,6 +8,8 @@
 #' @param long if \code{TRUE}, each row is a subject, visit, modality pair
 #' @param warn if \code{TRUE}, warnings will be produced when packages
 #' are not installed
+#' @param outdir output directory for files to download.  It will
+#' default to the directory of the corresponding package for the data.
 #' 
 #' @return Data.frame of filenames
 #' 
@@ -22,7 +24,8 @@ get_image_filenames_df = function(
   modalities = all_modalities(), 
   visits = c(1,2),
   long = TRUE,
-  warn = TRUE){
+  warn = TRUE,
+  outdir = NULL){
   
   
   ##########################################
@@ -75,7 +78,16 @@ get_image_filenames_df = function(
     }
   }
   df$filename = mapply(function(fname, pkg){
-    system.file( fname, package = pkg)
+    if (is.null(outdir)) {
+      file = system.file( fname, package = pkg)
+      return(file)
+    } else {
+      file = file.path(outdir, fname)
+      if (!file.exists(file)) {
+        file = ""
+      }
+      return(file)
+    }    
   }, df$filename, df$package)
   
   df = df[ !(df$filename %in% ""), , drop = FALSE]

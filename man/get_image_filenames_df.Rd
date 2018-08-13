@@ -9,7 +9,7 @@
 \title{Get Image Filenames in a data.frame}
 \usage{
 get_image_filenames_df(ids = get_ids(), modalities = all_modalities(),
-  visits = c(1, 2), long = TRUE, warn = TRUE)
+  visits = c(1, 2), long = TRUE, warn = TRUE, outdir = NULL)
 
 get_image_filenames_matrix(...)
 
@@ -31,6 +31,9 @@ get_image_filenames_list_by_subject(...)
 
 \item{warn}{if \code{TRUE}, warnings will be produced when packages
 are not installed}
+
+\item{outdir}{output directory for files to download.  It will
+default to the directory of the corresponding package for the data.}
 
 \item{...}{arguments passed to \code{\link{get_image_filenames_df}}}
 }

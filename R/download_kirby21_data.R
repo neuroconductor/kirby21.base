@@ -10,6 +10,8 @@
 #' @param force If the package of that modality is not installed stop.  If
 #' \code{force = FALSE}, then this will download the data but not
 #' really install the package.
+#' @param outdir output directory for files to download.  It will
+#' default to the directory of the corresponding package for the data.
 #'
 #' @return A logical indicating the data is there.
 #' @export
@@ -17,13 +19,15 @@
 download_kirby21_data =  function(
   modality = kirby21.base::all_modalities(),
   progress = TRUE,
-  force = FALSE){
+  force = FALSE,
+  outdir = NULL){
   
   modality = match.arg(modality)
   fnames = get_image_filenames(
     modalities = modality,
     ids = get_ids(),
-    warn = !force)
+    warn = !force,
+    outdir = outdir)
   
   mod_df = kirby21.base::modality_df()
   pkg = mod_df[ mod_df$modality %in% modality, "package"]  
@@ -84,7 +88,11 @@ download_kirby21_data =  function(
     files = list.files(path = datadir, recursive = TRUE)
     files = files[ !(files %in% "CITATION")]
     if (length(files) > 0) {
-      pkg_dir = system.file(package = pkg)
+      if (is.null(outdir)) {
+        pkg_dir = system.file(package = pkg)
+      } else {
+        pkg_dir = outdir
+      }
       infiles = file.path(datadir, files)
       outfiles = file.path(pkg_dir, files)
       dn = dirname(outfiles)
@@ -98,7 +106,8 @@ download_kirby21_data =  function(
   good = tryCatch({
     fnames = get_image_filenames(modalities = modality,
                                  ids = get_ids(),
-                                 warn = !force)
+                                 warn = !force,
+                                 outdir = outdir)
     TRUE
   }, warning = function(w) FALSE)
   return(good)

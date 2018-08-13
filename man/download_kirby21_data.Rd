@@ -5,7 +5,7 @@
 \title{Download Kirby21 Imaging Data}
 \usage{
 download_kirby21_data(modality = kirby21.base::all_modalities(),
-  progress = TRUE, force = FALSE)
+  progress = TRUE, force = FALSE, outdir = NULL)
 }
 \arguments{
 \item{modality}{modality of images that are to be downloaded.  You
@@ -17,6 +17,9 @@ the data}
 \item{force}{If the package of that modality is not installed stop.  If
 \code{force = FALSE}, then this will download the data but not
 really install the package.}
+
+\item{outdir}{output directory for files to download.  It will
+default to the directory of the corresponding package for the data.}
 }
 \value{
 A logical indicating the data is there.

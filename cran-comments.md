@@ -1,6 +1,6 @@
 ## Test environments
-* local OS X install, R 3.4.2
-* ubuntu 14.04 (on travis-ci), R 3.4.2
+* local OS X install, R 3.5.1
+* ubuntu 12.04 (on travis-ci), R 3.5.1
 * win-builder (devel and release)
 
 ## R CMD check results
@@ -9,8 +9,15 @@
 
 * This is a new release.
 
-## Revdep 
+## Reverse dependencies
 
-Checked kirby21.fmri: 0 errors | 0 warnings | 0 notes
-Checked kirby21.t1  : 0 errors | 0 warnings | 0 notes
+This is a new release, so there are no reverse dependencies.
 
+---
+
+* I have run R CMD check on the NUMBER downstream dependencies.
+  (Summary at ...). 
+  
+* FAILURE SUMMARY
+
+* All revdep maintainers were notified of the release on RELEASE DATE.
