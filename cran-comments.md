@@ -11,13 +11,9 @@
 
 ## Reverse dependencies
 
-This is a new release, so there are no reverse dependencies.
+This is a new release, and the reverse dependencies have been checked with 
+this version.
 
 ---
 
-* I have run R CMD check on the NUMBER downstream dependencies.
-  (Summary at ...). 
-  
-* FAILURE SUMMARY
-
-* All revdep maintainers were notified of the release on RELEASE DATE.
+* All revdep maintainers were notified of the release on 2018-08-08.
