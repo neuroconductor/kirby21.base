@@ -8,8 +8,14 @@
 \alias{get_image_filenames_list_by_subject}
 \title{Get Image Filenames in a data.frame}
 \usage{
-get_image_filenames_df(ids = get_ids(), modalities = all_modalities(),
-  visits = c(1, 2), long = TRUE, warn = TRUE, outdir = NULL)
+get_image_filenames_df(
+  ids = get_ids(),
+  modalities = all_modalities(),
+  visits = c(1, 2),
+  long = TRUE,
+  warn = TRUE,
+  outdir = NULL
+)
 
 get_image_filenames_matrix(...)
 

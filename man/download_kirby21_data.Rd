@@ -4,8 +4,12 @@
 \alias{download_kirby21_data}
 \title{Download Kirby21 Imaging Data}
 \usage{
-download_kirby21_data(modality = kirby21.base::all_modalities(),
-  progress = TRUE, force = FALSE, outdir = NULL)
+download_kirby21_data(
+  modality = kirby21.base::all_modalities(),
+  progress = TRUE,
+  force = FALSE,
+  outdir = NULL
+)
 }
 \arguments{
 \item{modality}{modality of images that are to be downloaded.  You
@@ -28,4 +32,14 @@ A logical indicating the data is there.
 This function allows users to download specific
 modalities for Kirby21 data sets.  This allows this package to be 
 on CRAN
+}
+\examples{
+on_cran = !identical(Sys.getenv("NOT_CRAN"), "true")
+on_ci <- nzchar(Sys.getenv("CI"))
+local_run = grepl("musch", tolower(Sys.info()[["user"]]))
+run_example = !on_cran || on_ci || local_run
+if (run_example) {
+outdir = tempdir()
+res = download_kirby21_data("SURVEY", outdir = outdir)
+}
 }

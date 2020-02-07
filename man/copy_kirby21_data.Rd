@@ -4,10 +4,10 @@
 \alias{copy_kirby21_data}
 \title{Copy Kirby21 Data to an output directory}
 \usage{
-copy_kirby21_data(outdir, ...)
+copy_kirby21_data(copydir, ...)
 }
 \arguments{
-\item{outdir}{Output directory for data}
+\item{copydir}{Output directory for data}
 
 \item{...}{Arguments to pass to \code{\link{get_image_filenames}}}
 }
@@ -16,4 +16,17 @@ Logical if files are copied
 }
 \description{
 Copies files from Kirby21 Package to an output directory
+}
+\examples{
+on_cran = !identical(Sys.getenv("NOT_CRAN"), "true")
+on_ci <- nzchar(Sys.getenv("CI"))
+local_run = grepl("musch", tolower(Sys.info()[["user"]]))
+run_example = !on_cran || on_ci || local_run
+if (run_example) {
+tdir = tempfile()
+dir.create(tdir)
+outdir = tempdir()
+res = download_kirby21_data("SURVEY", outdir = outdir)
+copy_kirby21_data(copydir = tdir, outdir = outdir)
+}
 }
