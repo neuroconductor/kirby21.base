@@ -26,7 +26,16 @@ if (run_example) {
 tdir = tempfile()
 dir.create(tdir)
 outdir = tempdir()
-res = download_kirby21_data("SURVEY", outdir = outdir)
+surv_installed = "kirby21.survey" \%in\% installed.packages()
+if (!surv_installed) {
+testthat::expect_error(
+download_kirby21_data("SURVEY", outdir = outdir,
+    force = FALSE))
+}
+res = download_kirby21_data("SURVEY", outdir = outdir, force = TRUE)
+if (!surv_installed) {
+remove.packages("kirby21.survey")
+}
 copy_kirby21_data(copydir = tdir, outdir = outdir)
 }
 }
