@@ -17,12 +17,12 @@
 #' surv_installed = "kirby21.survey" %in% installed.packages()
 #' if (!surv_installed) {
 #' testthat::expect_error(
-#' download_kirby21_data("SURVEY", outdir = outdir,
+#' download_kirby21_data("SURVEY", 
 #'     force = FALSE))
 #' }
 #' res = download_kirby21_data("SURVEY", outdir = outdir, force = TRUE)
 #' if (!surv_installed) {
-#' remove.packages("kirby21.survey")
+#' try({remove.packages("kirby21.survey")})
 #' }
 #' copy_kirby21_data(copydir = tdir, outdir = outdir)
 #' }

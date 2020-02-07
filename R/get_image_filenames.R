@@ -71,7 +71,7 @@ get_image_filenames_df = function(
   not_installed = setdiff(df$package, packs)
   if (length(not_installed) > 0) {
     not_installed = paste(not_installed, collapse = " ")
-    if (warn) {
+    if (warn && is.null(outdir)) {
       warning(paste0("Packages ", not_installed, 
                    " are not installed, modalities from ", 
                    "these packages may be missing"))

@@ -28,7 +28,7 @@ local_run = grepl("musch", tolower(Sys.info()[["user"]]))
 run_example = !on_cran || on_ci || local_run
 if (run_example) {
 outdir = tempdir()
-res = download_kirby21_data("SURVEY", outdir = outdir)
+res = download_kirby21_data("SURVEY", outdir = outdir, force = TRUE)
 delete_kirby21_data("SURVEY", outdir = outdir)
 }
 }
