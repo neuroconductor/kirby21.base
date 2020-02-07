@@ -31,6 +31,9 @@ if (!surv_installed) {
 testthat::expect_error(
 download_kirby21_data("SURVEY", 
     force = FALSE))
+} else {
+download_kirby21_data("SURVEY", 
+    force = FALSE)
 }
 res = download_kirby21_data("SURVEY", outdir = outdir, force = TRUE)
 if (!surv_installed) {
