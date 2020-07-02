@@ -1,7 +1,7 @@
 ## Test environments
-* local OS X install, R 3.5.1
-* ubuntu 12.04 (on travis-ci), R 3.5.1
-* win-builder (devel and release)
+* local R installation, R 4.0.0
+* ubuntu 16.04 (on travis-ci), R 4.0.0
+* win-builder (devel)
 
 ## R CMD check results
 
@@ -9,11 +9,3 @@
 
 * This is a new release.
 
-## Reverse dependencies
-
-This is a new release, and the reverse dependencies have been checked with 
-this version.
-
----
-
-* All revdep maintainers were notified of the release on 2018-08-08.

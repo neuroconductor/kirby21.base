@@ -1,3 +1,7 @@
+# kirby21.base 1.7.3
+
+* Added Brain Mask option for T1.
+
 # kirby21.base 1.7.0
 
 * Added options for deleting data with `delete_kirby21_data`.  
