@@ -13,6 +13,7 @@ modality_df = function(){
   mods = c(
     "FLAIR", "kirby21.flair",
     "T1",  "kirby21.t1",
+    "BrainMask",  "kirby21.t1",
     "T2",  "kirby21.t2",
     "fMRI",  "kirby21.fmri",
     "DTI", "kirby21.dti",
