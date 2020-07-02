@@ -1,8 +1,8 @@
 Package: kirby21.base
 Type: Package
 Title: Example Data from the Multi-Modal MRI 'Reproducibility' Resource
-Version: 1.7.2.1
-Date: 2020-03-17
+Version: 1.7.3
+Date: 2020-07-02
 Author: John Muschelli <muschellij2@gmail.com>
 Maintainer: John Muschelli <muschellij2@gmail.com>
 Description: Multi-modal magnetic resonance imaging ('MRI')
