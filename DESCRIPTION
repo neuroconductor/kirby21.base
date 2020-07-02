@@ -16,7 +16,7 @@ Imports:
     utils,
     stats,
     git2r
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 URL: https://www.nitrc.org/projects/multimodal/,
     http://dx.doi.org/10.1016/j.neuroimage.2010.11.047
 Encoding: UTF-8

@@ -3,7 +3,9 @@
 \name{subject_id_to_visit_id}
 \alias{subject_id_to_visit_id}
 \title{Kirby 21 Subject Identifiers to NITRC Visit Identifiers}
-\format{A data frame with 42 rows and 4 columns}
+\format{
+A data frame with 42 rows and 4 columns
+}
 \source{
 \url{https://www.nitrc.org/frs/?group_id=313}
 }

@@ -3,7 +3,9 @@
 \name{kirby21_demog}
 \alias{kirby21_demog}
 \title{Kirby 21 Demographics}
-\format{A data frame with 21 rows and 3 columns.}
+\format{
+A data frame with 21 rows and 3 columns.
+}
 \source{
 \url{https://www.nitrc.org/frs/?group_id=313}
 }
