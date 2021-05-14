@@ -5,3 +5,8 @@ data/^[.].*
 ^\.travis\.yml$
 ^appveyor\.yml$
 ^cran-comments\.md$
+^DESCRIPTION\.bak$
+^\.github$
+^autoci\.yml$
+^autoci_pkgdown\.yml$
+^tic\.R$
